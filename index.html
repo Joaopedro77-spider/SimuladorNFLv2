@@ -434,10 +434,2385 @@ const FLAGS = {AU:'🇦🇺',BR:'🇧🇷',GB:'🇬🇧',FR:'🇫🇷',ES:'🇪�
    ESTADO
    ============================================================ */
 let DB = {
-  season:2026,
-  players:['Erick','Guir','Jao','Lagoa','Lolo','Raphinha'],
-  playoffsUnlocked:false,
-  weeks:{}   // { 1:{ games:[{id,away,home,winner}], picks:{ Erick:{gameId:'SEA'} } } }
+  "season": 2026,
+  "players": [
+    "Erick",
+    "Guir",
+    "Jao",
+    "Lagoa",
+    "Lolo",
+    "Raphinha"
+  ],
+  "playoffsUnlocked": false,
+  "weeks": {
+    "1": {
+      "games": [
+        {
+          "id": "NE@SEA",
+          "away": "NE",
+          "home": "SEA",
+          "winner": "SEA",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@LAR",
+          "away": "SF",
+          "home": "LAR",
+          "winner": "SF",
+          "flag": "AU",
+          "city": "Melbourne"
+        },
+        {
+          "id": "TB@CIN",
+          "away": "TB",
+          "home": "CIN",
+          "winner": "CIN",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@DET",
+          "away": "NO",
+          "home": "DET",
+          "winner": "DET",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@TEN",
+          "away": "NYJ",
+          "home": "TEN",
+          "winner": "NYJ",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@IND",
+          "away": "BAL",
+          "home": "IND",
+          "winner": "BAL",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@PIT",
+          "away": "ATL",
+          "home": "PIT",
+          "winner": "PIT",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@CAR",
+          "away": "CHI",
+          "home": "CAR",
+          "winner": "CHI",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@JAX",
+          "away": "CLE",
+          "home": "JAX",
+          "winner": "JAX",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@HOU",
+          "away": "BUF",
+          "home": "HOU",
+          "winner": "BUF",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@LV",
+          "away": "MIA",
+          "home": "LV",
+          "winner": "LV",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@MIN",
+          "away": "GB",
+          "home": "MIN",
+          "winner": "MIN",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@PHI",
+          "away": "WAS",
+          "home": "PHI",
+          "winner": "PHI",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@LAC",
+          "away": "ARI",
+          "home": "LAC",
+          "winner": "ARI",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@NYG",
+          "away": "DAL",
+          "home": "NYG",
+          "winner": "NYG",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@KC",
+          "away": "DEN",
+          "home": "KC",
+          "winner": "KC",
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {
+        "Erick": {
+          "NE@SEA": "NE",
+          "SF@LAR": "LAR",
+          "TB@CIN": "TB",
+          "NO@DET": "DET",
+          "NYJ@TEN": "NYJ",
+          "BAL@IND": "BAL",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CHI",
+          "CLE@JAX": "CLE",
+          "BUF@HOU": "BUF",
+          "MIA@LV": "LV",
+          "GB@MIN": "GB",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "DAL",
+          "DEN@KC": "DEN"
+        },
+        "Lolo": {
+          "NE@SEA": "SEA",
+          "SF@LAR": "LAR",
+          "TB@CIN": "TB",
+          "NO@DET": "DET",
+          "NYJ@TEN": "NYJ",
+          "BAL@IND": "IND",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CAR",
+          "CLE@JAX": "JAX",
+          "BUF@HOU": "BUF",
+          "MIA@LV": "LV",
+          "GB@MIN": "GB",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "DAL",
+          "DEN@KC": "KC"
+        },
+        "Guir": {
+          "NE@SEA": "SEA",
+          "SF@LAR": "SF",
+          "TB@CIN": "CIN",
+          "NO@DET": "DET",
+          "NYJ@TEN": "NYJ",
+          "BAL@IND": "BAL",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CHI",
+          "CLE@JAX": "JAX",
+          "BUF@HOU": "BUF",
+          "MIA@LV": "LV",
+          "GB@MIN": "GB",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "NYG",
+          "DEN@KC": "DEN"
+        },
+        "Raphinha": {
+          "NE@SEA": "SEA",
+          "SF@LAR": "LAR",
+          "TB@CIN": "CIN",
+          "NO@DET": "DET",
+          "NYJ@TEN": "TEN",
+          "BAL@IND": "BAL",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CHI",
+          "CLE@JAX": "JAX",
+          "BUF@HOU": "BUF",
+          "MIA@LV": "LV",
+          "GB@MIN": "MIN",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "DAL",
+          "DEN@KC": "KC"
+        },
+        "Jao": {
+          "NE@SEA": "SEA",
+          "SF@LAR": "LAR",
+          "TB@CIN": "CIN",
+          "NO@DET": "DET",
+          "NYJ@TEN": "TEN",
+          "BAL@IND": "BAL",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CHI",
+          "CLE@JAX": "JAX",
+          "BUF@HOU": "HOU",
+          "MIA@LV": "LV",
+          "GB@MIN": "MIN",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "DAL",
+          "DEN@KC": "DEN"
+        },
+        "Lagoa": {
+          "NE@SEA": "NE",
+          "SF@LAR": "LAR",
+          "TB@CIN": "CIN",
+          "NO@DET": "DET",
+          "NYJ@TEN": "NYJ",
+          "BAL@IND": "BAL",
+          "ATL@PIT": "PIT",
+          "CHI@CAR": "CHI",
+          "CLE@JAX": "JAX",
+          "BUF@HOU": "BUF",
+          "MIA@LV": "LV",
+          "GB@MIN": "GB",
+          "WAS@PHI": "PHI",
+          "ARI@LAC": "LAC",
+          "DAL@NYG": "DAL",
+          "DEN@KC": "KC"
+        }
+      }
+    },
+    "2": {
+      "games": [
+        {
+          "id": "DET@BUF",
+          "away": "DET",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@CHI",
+          "away": "MIN",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@TEN",
+          "away": "PHI",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@NYJ",
+          "away": "GB",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@ATL",
+          "away": "CAR",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@BAL",
+          "away": "NO",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@HOU",
+          "away": "CIN",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@TB",
+          "away": "CLE",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@NE",
+          "away": "PIT",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@LAC",
+          "away": "LV",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@DEN",
+          "away": "JAX",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@DAL",
+          "away": "WAS",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@ARI",
+          "away": "SEA",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@SF",
+          "away": "MIA",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@KC",
+          "away": "IND",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@LAR",
+          "away": "NYG",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "3": {
+      "games": [
+        {
+          "id": "ATL@GB",
+          "away": "ATL",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@MIA",
+          "away": "KC",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@IND",
+          "away": "HOU",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@NYG",
+          "away": "TEN",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@JAX",
+          "away": "NE",
+          "home": "JAX",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@PIT",
+          "away": "CIN",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@CLE",
+          "away": "CAR",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@DET",
+          "away": "NYJ",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@WAS",
+          "away": "SEA",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@BUF",
+          "away": "LAC",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@TB",
+          "away": "MIN",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@SF",
+          "away": "ARI",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@DAL",
+          "away": "BAL",
+          "home": "DAL",
+          "winner": null,
+          "flag": "BR",
+          "city": "Rio de Janeiro"
+        },
+        {
+          "id": "LV@NO",
+          "away": "LV",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@DEN",
+          "away": "LAR",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@CHI",
+          "away": "PHI",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "4": {
+      "games": [
+        {
+          "id": "PIT@CLE",
+          "away": "PIT",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@WAS",
+          "away": "IND",
+          "home": "WAS",
+          "winner": null,
+          "flag": "GB",
+          "city": "Londres"
+        },
+        {
+          "id": "TEN@BAL",
+          "away": "TEN",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@NYG",
+          "away": "ARI",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@CIN",
+          "away": "JAX",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@BUF",
+          "away": "NE",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@HOU",
+          "away": "DAL",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@PHI",
+          "away": "LAR",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@TB",
+          "away": "GB",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@CHI",
+          "away": "NYJ",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@MIN",
+          "away": "MIA",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@SF",
+          "away": "DEN",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@SEA",
+          "away": "LAC",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@LV",
+          "away": "KC",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@CAR",
+          "away": "DET",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@NO",
+          "away": "ATL",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "5": {
+      "games": [
+        {
+          "id": "TB@DAL",
+          "away": "TB",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@JAX",
+          "away": "PHI",
+          "home": "JAX",
+          "winner": null,
+          "flag": "GB",
+          "city": "Londres"
+        },
+        {
+          "id": "LV@NE",
+          "away": "LV",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@TEN",
+          "away": "HOU",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@NYJ",
+          "away": "CLE",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@PIT",
+          "away": "IND",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@MIA",
+          "away": "CIN",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@NO",
+          "away": "MIN",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@WAS",
+          "away": "NYG",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@LAC",
+          "away": "DEN",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@GB",
+          "away": "CHI",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@ARI",
+          "away": "DET",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@SEA",
+          "away": "SF",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@ATL",
+          "away": "BAL",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@LAR",
+          "away": "BUF",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "6": {
+      "games": [
+        {
+          "id": "SEA@DEN",
+          "away": "SEA",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@JAX",
+          "away": "HOU",
+          "home": "JAX",
+          "winner": null,
+          "flag": "GB",
+          "city": "Londres"
+        },
+        {
+          "id": "NYJ@NE",
+          "away": "NYJ",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@TB",
+          "away": "PIT",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@PHI",
+          "away": "CAR",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@ATL",
+          "away": "CHI",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@IND",
+          "away": "TEN",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@NYG",
+          "away": "NO",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@CLE",
+          "away": "BAL",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@LAR",
+          "away": "ARI",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@KC",
+          "away": "LAC",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@LV",
+          "away": "BUF",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@GB",
+          "away": "DAL",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@SF",
+          "away": "WAS",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "7": {
+      "games": [
+        {
+          "id": "NE@CHI",
+          "away": "NE",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@NO",
+          "away": "PIT",
+          "home": "NO",
+          "winner": null,
+          "flag": "FR",
+          "city": "Paris"
+        },
+        {
+          "id": "CLE@TEN",
+          "away": "CLE",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@NYJ",
+          "away": "MIA",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@MIN",
+          "away": "IND",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@BAL",
+          "away": "CIN",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@HOU",
+          "away": "NYG",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@CAR",
+          "away": "TB",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@ATL",
+          "away": "SF",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@ARI",
+          "away": "DEN",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@LV",
+          "away": "LAR",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@DET",
+          "away": "GB",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@SEA",
+          "away": "KC",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@PHI",
+          "away": "DAL",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "8": {
+      "games": [
+        {
+          "id": "CAR@GB",
+          "away": "CAR",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@CIN",
+          "away": "TEN",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@JAX",
+          "away": "IND",
+          "home": "JAX",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@PIT",
+          "away": "CLE",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@BUF",
+          "away": "BAL",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@TB",
+          "away": "ATL",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@DET",
+          "away": "MIN",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@DAL",
+          "away": "ARI",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@NYJ",
+          "away": "LV",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@LAR",
+          "away": "LAC",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@DEN",
+          "away": "KC",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@MIA",
+          "away": "NE",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@WAS",
+          "away": "PHI",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@SEA",
+          "away": "CHI",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "9": {
+      "games": [
+        {
+          "id": "JAX@BAL",
+          "away": "JAX",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@ATL",
+          "away": "CIN",
+          "home": "ATL",
+          "winner": null,
+          "flag": "ES",
+          "city": "Madri"
+        },
+        {
+          "id": "NYJ@KC",
+          "away": "NYJ",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@NO",
+          "away": "CLE",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@CAR",
+          "away": "DEN",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@IND",
+          "away": "DAL",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@MIA",
+          "away": "DET",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@PHI",
+          "away": "NYG",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@WAS",
+          "away": "LAR",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@SF",
+          "away": "LV",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@LAC",
+          "away": "HOU",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@SEA",
+          "away": "ARI",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@NE",
+          "away": "GB",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@CHI",
+          "away": "TB",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@MIN",
+          "away": "BUF",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "10": {
+      "games": [
+        {
+          "id": "WAS@NYG",
+          "away": "WAS",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@DET",
+          "away": "NE",
+          "home": "DET",
+          "winner": null,
+          "flag": "DE",
+          "city": "Munique"
+        },
+        {
+          "id": "BUF@NYJ",
+          "away": "BUF",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@IND",
+          "away": "MIA",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@ATL",
+          "away": "KC",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@GB",
+          "away": "MIN",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@TEN",
+          "away": "JAX",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@CLE",
+          "away": "HOU",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@NO",
+          "away": "CAR",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@ARI",
+          "away": "LAR",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@LV",
+          "away": "SEA",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@DAL",
+          "away": "SF",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@CIN",
+          "away": "PIT",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@BAL",
+          "away": "LAC",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "11": {
+      "games": [
+        {
+          "id": "IND@HOU",
+          "away": "IND",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@KC",
+          "away": "ARI",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@DET",
+          "away": "TB",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@NYG",
+          "away": "JAX",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@BUF",
+          "away": "MIA",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@DAL",
+          "away": "TEN",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@CAR",
+          "away": "BAL",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@CHI",
+          "away": "NO",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@LAC",
+          "away": "NYJ",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@PHI",
+          "away": "PIT",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@DEN",
+          "away": "LV",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@SF",
+          "away": "MIN",
+          "home": "SF",
+          "winner": null,
+          "flag": "MX",
+          "city": "Cidade do México"
+        },
+        {
+          "id": "CIN@WAS",
+          "away": "CIN",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "12": {
+      "games": [
+        {
+          "id": "GB@LAR",
+          "away": "GB",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@DET",
+          "away": "CHI",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@DAL",
+          "away": "PHI",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@BUF",
+          "away": "KC",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@PIT",
+          "away": "DEN",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@HOU",
+          "away": "BAL",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@CIN",
+          "away": "NO",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@MIA",
+          "away": "NYJ",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@MIN",
+          "away": "ATL",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@IND",
+          "away": "NYG",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@CLE",
+          "away": "LV",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@JAX",
+          "away": "TEN",
+          "home": "JAX",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@ARI",
+          "away": "WAS",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@SF",
+          "away": "SEA",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@LAC",
+          "away": "NE",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@TB",
+          "away": "CAR",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "13": {
+      "games": [
+        {
+          "id": "KC@LAR",
+          "away": "KC",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@ATL",
+          "away": "DET",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@TB",
+          "away": "LAC",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@TEN",
+          "away": "WAS",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@CLE",
+          "away": "CIN",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@NYG",
+          "away": "SF",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@NO",
+          "away": "GB",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@CHI",
+          "away": "JAX",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@ARI",
+          "away": "PHI",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@DEN",
+          "away": "MIA",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@MIN",
+          "away": "CAR",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@NE",
+          "away": "BUF",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@PIT",
+          "away": "HOU",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@SEA",
+          "away": "DAL",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "14": {
+      "games": [
+        {
+          "id": "MIN@NE",
+          "away": "MIN",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@NYJ",
+          "away": "DEN",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@CLE",
+          "away": "ATL",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@MIA",
+          "away": "CHI",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@WAS",
+          "away": "HOU",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@CAR",
+          "away": "NO",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@PHI",
+          "away": "IND",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@BAL",
+          "away": "TB",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@DET",
+          "away": "TEN",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@LV",
+          "away": "LAC",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@CIN",
+          "away": "KC",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@SF",
+          "away": "LAR",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@SEA",
+          "away": "NYG",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@GB",
+          "away": "BUF",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@JAX",
+          "away": "PIT",
+          "home": "JAX",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "15": {
+      "games": [
+        {
+          "id": "SF@LAC",
+          "away": "SF",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@PHI",
+          "away": "SEA",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@BUF",
+          "away": "CHI",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@HOU",
+          "away": "JAX",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BAL@PIT",
+          "away": "BAL",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@NYG",
+          "away": "CLE",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@TEN",
+          "away": "IND",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@GB",
+          "away": "MIA",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@TB",
+          "away": "NO",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@CAR",
+          "away": "CIN",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@WAS",
+          "away": "ATL",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYJ@ARI",
+          "away": "NYJ",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@LAR",
+          "away": "DAL",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@LV",
+          "away": "DEN",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@MIN",
+          "away": "DET",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@KC",
+          "away": "NE",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "16": {
+      "games": [
+        {
+          "id": "HOU@PHI",
+          "away": "HOU",
+          "home": "PHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@CHI",
+          "away": "GB",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@DEN",
+          "away": "BUF",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@SEA",
+          "away": "LAR",
+          "home": "SEA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@ATL",
+          "away": "TB",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@MIN",
+          "away": "WAS",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CAR@PIT",
+          "away": "CAR",
+          "home": "PIT",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CIN@IND",
+          "away": "CIN",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NE@NYJ",
+          "away": "NE",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@BAL",
+          "away": "CLE",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@MIA",
+          "away": "LAC",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@LV",
+          "away": "ARI",
+          "home": "LV",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@KC",
+          "away": "SF",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@DAL",
+          "away": "JAX",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@DET",
+          "away": "NYG",
+          "home": "DET",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "17": {
+      "games": [
+        {
+          "id": "BAL@CIN",
+          "away": "BAL",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@TB",
+          "away": "LAR",
+          "home": "TB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@NE",
+          "away": "DEN",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "KC@LAC",
+          "away": "KC",
+          "home": "LAC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "WAS@JAX",
+          "away": "WAS",
+          "home": "JAX",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "BUF@MIA",
+          "away": "BUF",
+          "home": "MIA",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@TEN",
+          "away": "PIT",
+          "home": "TEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@NYJ",
+          "away": "MIN",
+          "home": "NYJ",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NO@ATL",
+          "away": "NO",
+          "home": "ATL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@CAR",
+          "away": "SEA",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@CLE",
+          "away": "IND",
+          "home": "CLE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "NYG@DAL",
+          "away": "NYG",
+          "home": "DAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@ARI",
+          "away": "LV",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@CHI",
+          "away": "DET",
+          "home": "CHI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@SF",
+          "away": "PHI",
+          "home": "SF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "HOU@GB",
+          "away": "HOU",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    },
+    "18": {
+      "games": [
+        {
+          "id": "NYJ@BUF",
+          "away": "NYJ",
+          "home": "BUF",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@IND",
+          "away": "JAX",
+          "home": "IND",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@KC",
+          "away": "LV",
+          "home": "KC",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@HOU",
+          "away": "TEN",
+          "home": "HOU",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@DEN",
+          "away": "LAC",
+          "home": "DEN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIA@NE",
+          "away": "MIA",
+          "home": "NE",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@CIN",
+          "away": "CLE",
+          "home": "CIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PIT@BAL",
+          "away": "PIT",
+          "home": "BAL",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CHI@MIN",
+          "away": "CHI",
+          "home": "MIN",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DET@GB",
+          "away": "DET",
+          "home": "GB",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@WAS",
+          "away": "DAL",
+          "home": "WAS",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TB@NO",
+          "away": "TB",
+          "home": "NO",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "PHI@NYG",
+          "away": "PHI",
+          "home": "NYG",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SEA@LAR",
+          "away": "SEA",
+          "home": "LAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@CAR",
+          "away": "ATL",
+          "home": "CAR",
+          "winner": null,
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "SF@ARI",
+          "away": "SF",
+          "home": "ARI",
+          "winner": null,
+          "flag": null,
+          "city": null
+        }
+      ],
+      "picks": {}
+    }
+  }
 };
 
 let ui = { week:1, panel:'rank', parsed:null, parsedPlayer:null };
