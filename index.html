@@ -58,6 +58,11 @@ h1 em{font-style:normal;color:var(--gold)}
   color:var(--slate);letter-spacing:2px;
 }
 .tagline{color:var(--slate);font-size:13px;margin-top:6px}
+.stamp{
+  font-size:11px;font-weight:600;letter-spacing:.4px;
+  color:var(--gold);background:rgba(232,179,58,.1);
+  border:1px solid rgba(232,179,58,.3);padding:2px 8px;border-radius:3px;
+}
 
 /* ---------- nav ---------- */
 nav{display:flex;gap:2px;margin:20px 0 0;flex-wrap:wrap}
@@ -238,6 +243,7 @@ svg.chart{width:100%;height:auto;display:block}
   <div class="brandrow">
     <h1>Simulador <em>NFL</em></h1>
     <span class="season">2026 · Uscara</span>
+    <span class="stamp" id="stamp"></span>
   </div>
   <p class="tagline">Palpites da rodada, ranking e as estatísticas que rendem discussão.</p>
   <nav role="tablist">
@@ -3573,6 +3579,13 @@ for(const w in FALLBACK){
 const _done = weekList().filter(w=>decided(w).length>0);
 ui.week = _done.length ? _done[_done.length-1] : 1;
 render();
+(function(){
+  const el=document.querySelector('#stamp'); if(!el) return;
+  const n=_done.reduce((a,w)=>a+decided(w).length,0);
+  el.textContent = _done.length
+    ? `Semanas ${_done[0]}–${_done[_done.length-1]} · ${n} resultados`
+    : 'sem resultados carregados';
+})();
 </script>
 </body>
 </html>
