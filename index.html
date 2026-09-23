@@ -3564,10 +3564,15 @@ function setPanel(p){
 }
 document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{if(!t.disabled)setPanel(t.dataset.p);});
 
-for(const w in FALLBACK) ensureWeek(+w).games = fromFallback(+w);
-ui.week = 1;
+// so preenche semanas que ainda nao tem jogos — nunca apaga resultados ja salvos
+for(const w in FALLBACK){
+  const wk = ensureWeek(+w);
+  if(!wk.games || !wk.games.length) wk.games = fromFallback(+w);
+}
+// abre na ultima semana que ja tem resultado
+const _done = weekList().filter(w=>decided(w).length>0);
+ui.week = _done.length ? _done[_done.length-1] : 1;
 render();
-loadWeek(1).then(()=>render());
 </script>
 </body>
 </html>
