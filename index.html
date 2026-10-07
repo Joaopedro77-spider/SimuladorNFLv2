@@ -1183,7 +1183,7 @@ let DB = {
           "id": "PIT@CLE",
           "away": "PIT",
           "home": "CLE",
-          "winner": null,
+          "winner": "CLE",
           "flag": null,
           "city": null
         },
@@ -1191,63 +1191,15 @@ let DB = {
           "id": "IND@WAS",
           "away": "IND",
           "home": "WAS",
-          "winner": null,
+          "winner": "IND",
           "flag": "GB",
           "city": "Londres"
-        },
-        {
-          "id": "TEN@BAL",
-          "away": "TEN",
-          "home": "BAL",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "ARI@NYG",
-          "away": "ARI",
-          "home": "NYG",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "JAX@CIN",
-          "away": "JAX",
-          "home": "CIN",
-          "winner": null,
-          "flag": null,
-          "city": null
         },
         {
           "id": "NE@BUF",
           "away": "NE",
           "home": "BUF",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "DAL@HOU",
-          "away": "DAL",
-          "home": "HOU",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "LAR@PHI",
-          "away": "LAR",
-          "home": "PHI",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "GB@TB",
-          "away": "GB",
-          "home": "TB",
-          "winner": null,
+          "winner": "NE",
           "flag": null,
           "city": null
         },
@@ -1255,7 +1207,55 @@ let DB = {
           "id": "NYJ@CHI",
           "away": "NYJ",
           "home": "CHI",
-          "winner": null,
+          "winner": "CHI",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "JAX@CIN",
+          "away": "JAX",
+          "home": "CIN",
+          "winner": "JAX",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ARI@NYG",
+          "away": "ARI",
+          "home": "NYG",
+          "winner": "NYG",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAR@PHI",
+          "away": "LAR",
+          "home": "PHI",
+          "winner": "LAR",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "GB@TB",
+          "away": "GB",
+          "home": "TB",
+          "winner": "GB",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "TEN@BAL",
+          "away": "TEN",
+          "home": "BAL",
+          "winner": "BAL",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DAL@HOU",
+          "away": "DAL",
+          "home": "HOU",
+          "winner": "DAL",
           "flag": null,
           "city": null
         },
@@ -1263,23 +1263,7 @@ let DB = {
           "id": "MIA@MIN",
           "away": "MIA",
           "home": "MIN",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "DEN@SF",
-          "away": "DEN",
-          "home": "SF",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "LAC@SEA",
-          "away": "LAC",
-          "home": "SEA",
-          "winner": null,
+          "winner": "MIN",
           "flag": null,
           "city": null
         },
@@ -1287,7 +1271,23 @@ let DB = {
           "id": "KC@LV",
           "away": "KC",
           "home": "LV",
-          "winner": null,
+          "winner": "KC",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "DEN@SF",
+          "away": "DEN",
+          "home": "SF",
+          "winner": "SF",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LAC@SEA",
+          "away": "LAC",
+          "home": "SEA",
+          "winner": "SEA",
           "flag": null,
           "city": null
         },
@@ -1295,7 +1295,7 @@ let DB = {
           "id": "DET@CAR",
           "away": "DET",
           "home": "CAR",
-          "winner": null,
+          "winner": "CAR",
           "flag": null,
           "city": null
         },
@@ -1303,12 +1303,121 @@ let DB = {
           "id": "ATL@NO",
           "away": "ATL",
           "home": "NO",
-          "winner": null,
+          "winner": "ATL",
           "flag": null,
           "city": null
         }
       ],
-      "picks": {}
+      "picks": {
+        "Erick": {
+          "PIT@CLE": "PIT",
+          "IND@WAS": "IND",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "CHI",
+          "JAX@CIN": "CIN",
+          "ARI@NYG": "NYG",
+          "LAR@PHI": "LAR",
+          "GB@TB": "TB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "KC",
+          "DEN@SF": "DEN",
+          "LAC@SEA": "SEA",
+          "DET@CAR": "DET",
+          "ATL@NO": "NO"
+        },
+        "Guir": {
+          "PIT@CLE": "PIT",
+          "IND@WAS": "WAS",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "CHI",
+          "JAX@CIN": "CIN",
+          "ARI@NYG": "NYG",
+          "LAR@PHI": "PHI",
+          "GB@TB": "GB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "LV",
+          "DEN@SF": "SF",
+          "LAC@SEA": "SEA",
+          "DET@CAR": "DET",
+          "ATL@NO": "NO"
+        },
+        "Raphinha": {
+          "PIT@CLE": "PIT",
+          "IND@WAS": "IND",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "CHI",
+          "JAX@CIN": "JAX",
+          "ARI@NYG": "NYG",
+          "LAR@PHI": "LAR",
+          "GB@TB": "TB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "KC",
+          "DEN@SF": "SF",
+          "LAC@SEA": "SEA",
+          "DET@CAR": "DET",
+          "ATL@NO": "ATL"
+        },
+        "Jao": {
+          "PIT@CLE": "PIT",
+          "IND@WAS": "IND",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "CHI",
+          "JAX@CIN": "CIN",
+          "ARI@NYG": "NYG",
+          "LAR@PHI": "LAR",
+          "GB@TB": "GB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "KC",
+          "DEN@SF": "DEN",
+          "LAC@SEA": "SEA",
+          "DET@CAR": "DET",
+          "ATL@NO": "ATL"
+        },
+        "Lagoa": {
+          "PIT@CLE": "CLE",
+          "IND@WAS": "WAS",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "CHI",
+          "JAX@CIN": "CIN",
+          "ARI@NYG": "ARI",
+          "LAR@PHI": "LAR",
+          "GB@TB": "GB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "KC",
+          "DEN@SF": "DEN",
+          "LAC@SEA": "LAC",
+          "DET@CAR": "DET",
+          "ATL@NO": "ATL"
+        },
+        "Lolo": {
+          "PIT@CLE": "CLE",
+          "IND@WAS": "WAS",
+          "NE@BUF": "BUF",
+          "NYJ@CHI": "NYJ",
+          "JAX@CIN": "CIN",
+          "ARI@NYG": "ARI",
+          "LAR@PHI": "PHI",
+          "GB@TB": "GB",
+          "TEN@BAL": "BAL",
+          "DAL@HOU": "DAL",
+          "MIA@MIN": "MIN",
+          "KC@LV": "KC",
+          "DEN@SF": "SF",
+          "LAC@SEA": "SEA",
+          "DET@CAR": "CAR",
+          "ATL@NO": "NO"
+        }
+      }
     },
     "5": {
       "games": [
