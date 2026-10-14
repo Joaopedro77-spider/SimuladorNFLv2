@@ -166,6 +166,12 @@ label{font-size:13px;color:var(--slate);font-weight:500}
   background:rgba(232,179,58,.1);border:1px solid rgba(232,179,58,.28);
   padding:1px 7px;border-radius:3px;
 }
+.game.tie{border-color:rgba(125,140,168,.45)}
+.tiebadge{
+  font-size:11px;font-weight:600;letter-spacing:.3px;color:#C9D2E3;
+  background:rgba(125,140,168,.18);border:1px solid rgba(125,140,168,.4);
+  padding:1px 8px;border-radius:3px;
+}
 .gmatch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .tm{
   font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;
@@ -1425,7 +1431,7 @@ let DB = {
           "id": "TB@DAL",
           "away": "TB",
           "home": "DAL",
-          "winner": null,
+          "winner": "TB",
           "flag": null,
           "city": null
         },
@@ -1433,15 +1439,15 @@ let DB = {
           "id": "PHI@JAX",
           "away": "PHI",
           "home": "JAX",
-          "winner": null,
+          "winner": "JAX",
           "flag": "GB",
           "city": "Londres"
         },
         {
-          "id": "LV@NE",
-          "away": "LV",
-          "home": "NE",
-          "winner": null,
+          "id": "CHI@GB",
+          "away": "CHI",
+          "home": "GB",
+          "winner": "GB",
           "flag": null,
           "city": null
         },
@@ -1449,23 +1455,7 @@ let DB = {
           "id": "HOU@TEN",
           "away": "HOU",
           "home": "TEN",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "CLE@NYJ",
-          "away": "CLE",
-          "home": "NYJ",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "IND@PIT",
-          "away": "IND",
-          "home": "PIT",
-          "winner": null,
+          "winner": "HOU",
           "flag": null,
           "city": null
         },
@@ -1473,7 +1463,15 @@ let DB = {
           "id": "CIN@MIA",
           "away": "CIN",
           "home": "MIA",
-          "winner": null,
+          "winner": "CIN",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "LV@NE",
+          "away": "LV",
+          "home": "NE",
+          "winner": "NE",
           "flag": null,
           "city": null
         },
@@ -1481,7 +1479,23 @@ let DB = {
           "id": "MIN@NO",
           "away": "MIN",
           "home": "NO",
-          "winner": null,
+          "winner": "MIN",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@NYJ",
+          "away": "CLE",
+          "home": "NYJ",
+          "winner": "NYJ",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@PIT",
+          "away": "IND",
+          "home": "PIT",
+          "winner": "PIT",
           "flag": null,
           "city": null
         },
@@ -1489,7 +1503,7 @@ let DB = {
           "id": "NYG@WAS",
           "away": "NYG",
           "home": "WAS",
-          "winner": null,
+          "winner": "EMPATE",
           "flag": null,
           "city": null
         },
@@ -1497,15 +1511,7 @@ let DB = {
           "id": "DEN@LAC",
           "away": "DEN",
           "home": "LAC",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "CHI@GB",
-          "away": "CHI",
-          "home": "GB",
-          "winner": null,
+          "winner": "DEN",
           "flag": null,
           "city": null
         },
@@ -1513,7 +1519,7 @@ let DB = {
           "id": "DET@ARI",
           "away": "DET",
           "home": "ARI",
-          "winner": null,
+          "winner": "DET",
           "flag": null,
           "city": null
         },
@@ -1521,7 +1527,7 @@ let DB = {
           "id": "SF@SEA",
           "away": "SF",
           "home": "SEA",
-          "winner": null,
+          "winner": "SF",
           "flag": null,
           "city": null
         },
@@ -1529,7 +1535,7 @@ let DB = {
           "id": "BAL@ATL",
           "away": "BAL",
           "home": "ATL",
-          "winner": null,
+          "winner": "BAL",
           "flag": null,
           "city": null
         },
@@ -1537,12 +1543,115 @@ let DB = {
           "id": "BUF@LAR",
           "away": "BUF",
           "home": "LAR",
-          "winner": null,
+          "winner": "BUF",
           "flag": null,
           "city": null
         }
       ],
-      "picks": {}
+      "picks": {
+        "Erick": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "CHI",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "LV",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "CLE",
+          "IND@PIT": "IND",
+          "NYG@WAS": "NYG",
+          "DEN@LAC": "DEN",
+          "DET@ARI": "DET",
+          "SF@SEA": "SF",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "BUF"
+        },
+        "Raphinha": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "GB",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "NE",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "CLE",
+          "IND@PIT": "IND",
+          "NYG@WAS": "NYG",
+          "DEN@LAC": "LAC",
+          "DET@ARI": "DET",
+          "SF@SEA": "SF",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "LAR"
+        },
+        "Guir": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "CHI",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "LV",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "NYJ",
+          "IND@PIT": "PIT",
+          "NYG@WAS": "WAS",
+          "DEN@LAC": "DEN",
+          "DET@ARI": "DET",
+          "SF@SEA": "SF",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "BUF"
+        },
+        "Lolo": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "CHI",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "LV",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "CLE",
+          "IND@PIT": "IND",
+          "NYG@WAS": "NYG",
+          "DEN@LAC": "DEN",
+          "DET@ARI": "ARI",
+          "SF@SEA": "SF",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "LAR"
+        },
+        "Lagoa": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "CHI",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "NE",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "NYJ",
+          "IND@PIT": "IND",
+          "NYG@WAS": "WAS",
+          "DEN@LAC": "DEN",
+          "DET@ARI": "DET",
+          "SF@SEA": "SEA",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "BUF"
+        },
+        "Jao": {
+          "TB@DAL": "DAL",
+          "PHI@JAX": "JAX",
+          "CHI@GB": "GB",
+          "HOU@TEN": "HOU",
+          "CIN@MIA": "CIN",
+          "LV@NE": "NE",
+          "MIN@NO": "MIN",
+          "CLE@NYJ": "CLE",
+          "IND@PIT": "PIT",
+          "NYG@WAS": "WAS",
+          "DEN@LAC": "LAC",
+          "DET@ARI": "DET",
+          "SF@SEA": "SEA",
+          "BAL@ATL": "BAL",
+          "BUF@LAR": "LAR"
+        }
+      }
     },
     "6": {
       "games": [
@@ -3398,10 +3507,11 @@ function renderWeek(){
 
   h+='<div class="games">';
   wk.games.forEach(g=>{
-    h+=`<div class="game${g.flag?' intl':''}">${g.flag?`<span class="flag" title="${g.city}">${FLAGS[g.flag]||'🌎'} ${g.city}</span>`:''}<div class="gmatch">
+    h+=`<div class="game${g.flag?' intl':''}${g.winner==='EMPATE'?' tie':''}">${g.flag?`<span class="flag" title="${g.city}">${FLAGS[g.flag]||'🌎'} ${g.city}</span>`:''}<div class="gmatch">
       <button class="tm ${g.winner===g.away?'win':''}" style="color:${TC(g.away)}" data-win="${ui.week}|${g.id}|${g.away}">${T(g.away)}</button>
       <span class="at">em</span>
       <button class="tm ${g.winner===g.home?'win':''}" style="color:${TC(g.home)}" data-win="${ui.week}|${g.id}|${g.home}">${T(g.home)}</button>
+      ${g.winner==='EMPATE'?'<span class="tiebadge">Empate · não conta</span>':''}
       ${g.winner?`<button class="btn ghost sm" data-win="${ui.week}|${g.id}|">Limpar</button>`:''}
     </div><div class="picks">`;
     DB.players.forEach(p=>{
