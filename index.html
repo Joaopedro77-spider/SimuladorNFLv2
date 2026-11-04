@@ -172,6 +172,31 @@ label{font-size:13px;color:var(--slate);font-weight:500}
   background:rgba(125,140,168,.18);border:1px solid rgba(125,140,168,.4);
   padding:1px 8px;border-radius:3px;
 }
+.pick.part{background:rgba(232,179,58,.14);border-color:rgba(232,179,58,.4);color:#F0CB6E}
+.awgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:12px}
+.awgrid.top{grid-template-columns:repeat(3,minmax(0,1fr))}
+.awgrid.top .awcard{padding:14px 12px}
+.awgrid.top table.aw{font-size:12px}
+.awgrid.top table.aw th,.awgrid.top table.aw td{padding:5px 4px}
+.awgrid.top table.aw .pick{white-space:normal;font-size:11px;line-height:1.25}
+@media(max-width:980px){.awgrid.top{grid-template-columns:1fr}}
+.awtbl{overflow-x:auto}
+.awcard{background:var(--field2);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.awcard h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:21px;letter-spacing:.4px;margin-bottom:0}
+.awcard .full{color:var(--slate);font-size:12px;margin-bottom:10px}
+.awres{font-size:13px;margin-bottom:10px;padding:7px 10px;border-radius:4px;background:rgba(79,180,119,.1);border:1px solid rgba(79,180,119,.3);color:#A7E2C0}
+.awres.pend{background:rgba(238,241,247,.05);border-color:var(--line);color:var(--slate)}
+table.aw{width:100%;border-collapse:collapse;font-size:13px}
+table.aw th{color:var(--slate);font-weight:500;font-size:11px;text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+table.aw td{padding:5px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.aw td.pl{font-weight:600;white-space:nowrap}
+table.aw td.pts{text-align:right;font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:16px;color:var(--gold)}
+table.aw .pick{display:inline-block;white-space:nowrap}
+.lockbadge{display:inline-block;font-size:12px;font-weight:600;color:var(--gold);background:rgba(232,179,58,.1);border:1px solid rgba(232,179,58,.3);padding:3px 9px;border-radius:3px;margin-bottom:12px}
+.awform{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;align-items:center;margin:12px 0}
+.awform .ins{display:flex;gap:6px;flex-wrap:wrap}
+.awform input[type=text]{flex:1;min-width:120px}
+@media(max-width:560px){.awform{grid-template-columns:1fr}.awgrid,.awgrid.top{grid-template-columns:1fr}}
 .gmatch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
 .tm{
   font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:19px;
@@ -256,6 +281,7 @@ svg.chart{width:100%;height:auto;display:block}
     <button class="tab" role="tab" aria-selected="true" data-p="rank">Ranking</button>
     <button class="tab" role="tab" aria-selected="false" data-p="week">Rodada</button>
     <button class="tab" role="tab" aria-selected="false" data-p="stats">Estatísticas</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="awards">Prêmios</button>
     <button class="tab" role="tab" aria-selected="false" data-p="po" id="tabPO" disabled>Playoffs</button>
     <button class="tab" role="tab" aria-selected="false" data-p="admin">Administrar</button>
   </nav>
@@ -264,6 +290,7 @@ svg.chart{width:100%;height:auto;display:block}
 <section class="panel on" id="p-rank"></section>
 <section class="panel" id="p-week"></section>
 <section class="panel" id="p-stats"></section>
+<section class="panel" id="p-awards"></section>
 <section class="panel" id="p-po"></section>
 <section class="panel" id="p-admin"></section>
 
@@ -2087,31 +2114,7 @@ let DB = {
           "id": "CAR@GB",
           "away": "CAR",
           "home": "GB",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "TEN@CIN",
-          "away": "TEN",
-          "home": "CIN",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "IND@JAX",
-          "away": "IND",
-          "home": "JAX",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "CLE@PIT",
-          "away": "CLE",
-          "home": "PIT",
-          "winner": null,
+          "winner": "GB",
           "flag": null,
           "city": null
         },
@@ -2119,23 +2122,15 @@ let DB = {
           "id": "BAL@BUF",
           "away": "BAL",
           "home": "BUF",
-          "winner": null,
+          "winner": "BUF",
           "flag": null,
           "city": null
         },
         {
-          "id": "ATL@TB",
-          "away": "ATL",
-          "home": "TB",
-          "winner": null,
-          "flag": null,
-          "city": null
-        },
-        {
-          "id": "MIN@DET",
-          "away": "MIN",
-          "home": "DET",
-          "winner": null,
+          "id": "TEN@CIN",
+          "away": "TEN",
+          "home": "CIN",
+          "winner": "CIN",
           "flag": null,
           "city": null
         },
@@ -2143,7 +2138,15 @@ let DB = {
           "id": "ARI@DAL",
           "away": "ARI",
           "home": "DAL",
-          "winner": null,
+          "winner": "ARI",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "MIN@DET",
+          "away": "MIN",
+          "home": "DET",
+          "winner": "DET",
           "flag": null,
           "city": null
         },
@@ -2151,7 +2154,31 @@ let DB = {
           "id": "LV@NYJ",
           "away": "LV",
           "home": "NYJ",
-          "winner": null,
+          "winner": "LV",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "CLE@PIT",
+          "away": "CLE",
+          "home": "PIT",
+          "winner": "PIT",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "ATL@TB",
+          "away": "ATL",
+          "home": "TB",
+          "winner": "TB",
+          "flag": null,
+          "city": null
+        },
+        {
+          "id": "IND@JAX",
+          "away": "IND",
+          "home": "JAX",
+          "winner": "JAX",
           "flag": null,
           "city": null
         },
@@ -2159,7 +2186,7 @@ let DB = {
           "id": "LAC@LAR",
           "away": "LAC",
           "home": "LAR",
-          "winner": null,
+          "winner": "LAR",
           "flag": null,
           "city": null
         },
@@ -2167,7 +2194,7 @@ let DB = {
           "id": "KC@DEN",
           "away": "KC",
           "home": "DEN",
-          "winner": null,
+          "winner": "DEN",
           "flag": null,
           "city": null
         },
@@ -2175,7 +2202,7 @@ let DB = {
           "id": "NE@MIA",
           "away": "NE",
           "home": "MIA",
-          "winner": null,
+          "winner": "NE",
           "flag": null,
           "city": null
         },
@@ -2183,7 +2210,7 @@ let DB = {
           "id": "PHI@WAS",
           "away": "PHI",
           "home": "WAS",
-          "winner": null,
+          "winner": "WAS",
           "flag": null,
           "city": null
         },
@@ -2191,12 +2218,109 @@ let DB = {
           "id": "CHI@SEA",
           "away": "CHI",
           "home": "SEA",
-          "winner": null,
+          "winner": "CHI",
           "flag": null,
           "city": null
         }
       ],
-      "picks": {}
+      "picks": {
+        "Erick": {
+          "CAR@GB": "CAR",
+          "BAL@BUF": "BUF",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "DAL",
+          "MIN@DET": "DET",
+          "LV@NYJ": "NYJ",
+          "CLE@PIT": "CLE",
+          "ATL@TB": "TB",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "KC",
+          "NE@MIA": "NE",
+          "PHI@WAS": "WAS",
+          "CHI@SEA": "CHI"
+        },
+        "Guir": {
+          "CAR@GB": "CAR",
+          "BAL@BUF": "BUF",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "DAL",
+          "MIN@DET": "DET",
+          "LV@NYJ": "LV",
+          "CLE@PIT": "CLE",
+          "ATL@TB": "TB",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "DEN",
+          "NE@MIA": "NE",
+          "PHI@WAS": "WAS",
+          "CHI@SEA": "SEA"
+        },
+        "Raphinha": {
+          "CAR@GB": "GB",
+          "BAL@BUF": "BAL",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "DAL",
+          "MIN@DET": "MIN",
+          "LV@NYJ": "LV",
+          "CLE@PIT": "PIT",
+          "ATL@TB": "TB",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "KC",
+          "NE@MIA": "NE",
+          "PHI@WAS": "WAS",
+          "CHI@SEA": "CHI"
+        },
+        "Jao": {
+          "CAR@GB": "GB",
+          "BAL@BUF": "BUF",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "DAL",
+          "MIN@DET": "DET",
+          "LV@NYJ": "LV",
+          "CLE@PIT": "PIT",
+          "ATL@TB": "ATL",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "DEN",
+          "NE@MIA": "NE",
+          "PHI@WAS": "WAS",
+          "CHI@SEA": "SEA"
+        },
+        "Lolo": {
+          "CAR@GB": "GB",
+          "BAL@BUF": "BUF",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "DAL",
+          "MIN@DET": "MIN",
+          "LV@NYJ": "LV",
+          "CLE@PIT": "PIT",
+          "ATL@TB": "TB",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "KC",
+          "NE@MIA": "NE",
+          "PHI@WAS": "WAS",
+          "CHI@SEA": "SEA"
+        },
+        "Lagoa": {
+          "CAR@GB": "GB",
+          "BAL@BUF": "BUF",
+          "TEN@CIN": "CIN",
+          "ARI@DAL": "ARI",
+          "MIN@DET": "DET",
+          "LV@NYJ": "LV",
+          "CLE@PIT": "PIT",
+          "ATL@TB": "ATL",
+          "IND@JAX": "JAX",
+          "LAC@LAR": "LAR",
+          "KC@DEN": "KC",
+          "NE@MIA": "NE",
+          "PHI@WAS": "PHI",
+          "CHI@SEA": "CHI"
+        }
+      }
     },
     "9": {
       "games": [
@@ -3622,6 +3746,158 @@ function consensus(wk,g){
 }
 
 /* ============================================================
+   PRÊMIOS — dados, pontuação (sistema 1) e fase 2
+   ============================================================ */
+const AWARDS=[
+  {k:'MVP', full:'Most Valuable Player', top:3},
+  {k:'OPOY',full:'Jogador Ofensivo do Ano', top:3},
+  {k:'DPOY',full:'Jogador Defensivo do Ano', top:3},
+  {k:'COTY',full:'Técnico do Ano', top:1},
+  {k:'CBPOY',full:'Retorno do Ano', top:1},
+  {k:'OROY',full:'Novato Ofensivo do Ano', top:1},
+  {k:'DROY',full:'Novato Defensivo do Ano', top:1}
+];
+const AWARDS_DEADLINE='17/11/2026';
+const POS_PTS=[5,3,1], PARTIAL_PTS=1, SINGLE_PTS=3;
+const esc=s=>(s||'').toString().replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function ensureAwards(){
+  if(!DB.awards) DB.awards={lockDate:'',picks:{},results:{}};
+  if(!DB.awards.lockDate) DB.awards.lockDate=AWARDS_DEADLINE;
+  DB.awards.picks=DB.awards.picks||{}; DB.awards.results=DB.awards.results||{};
+  return DB.awards;
+}
+const asArr=v=>Array.isArray(v)?v:(v?[v]:[]);
+/* status de cada palpite: exact | part | miss | pend */
+function awardEval(a,pickRaw,resRaw){
+  const pick=asArr(pickRaw), res=asArr(resRaw).map(norm);
+  const known=res.length && res[0];
+  const out=[]; let pts=0;
+  for(let i=0;i<a.top;i++){
+    const p=pick[i];
+    if(!p){out.push({name:'',st:'none'});continue;}
+    if(!known){out.push({name:p,st:'pend'});continue;}
+    const j=res.indexOf(norm(p));
+    if(a.top===1){ const ok=j===0; if(ok)pts+=SINGLE_PTS; out.push({name:p,st:ok?'exact':'miss'}); }
+    else if(j===i){ pts+=POS_PTS[i]; out.push({name:p,st:'exact'}); }
+    else if(j>=0){ pts+=PARTIAL_PTS; out.push({name:p,st:'part'}); }
+    else out.push({name:p,st:'miss'});
+  }
+  return {cells:out,pts,known:!!known};
+}
+function awardTotals(){
+  const A=ensureAwards(), t={};
+  DB.players.forEach(p=>{
+    let pts=0;
+    AWARDS.forEach(a=>{ pts+=awardEval(a,(A.picks[p]||{})[a.k],A.results[a.k]).pts; });
+    t[p]=pts;
+  });
+  return t;
+}
+function awardsDecided(){ const A=ensureAwards(); return AWARDS.filter(a=>asArr(A.results[a.k])[0]).length; }
+/* fase 2 = playoffs + prêmios (playoffs entra quando a aba for liberada) */
+function phase2Totals(){
+  const aw=awardTotals(), t={};
+  DB.players.forEach(p=>t[p]={awards:aw[p],playoffs:0,total:aw[p]});
+  return t;
+}
+function awardNames(){
+  const A=ensureAwards(), seen={}, out=[];
+  const add=n=>{ if(!n)return; const k=norm(n); if(k&&!seen[k]){seen[k]=1;out.push(n.trim());} };
+  Object.values(A.picks).forEach(pp=>Object.values(pp||{}).forEach(v=>asArr(v).forEach(add)));
+  Object.values(A.results).forEach(v=>asArr(v).forEach(add));
+  return out.sort((x,y)=>x.localeCompare(y));
+}
+
+function renderAwards(){
+  const el=$('#p-awards'); const A=ensureAwards();
+  const t=phase2Totals(); const nd=awardsDecided();
+  const anyPick=DB.players.some(p=>Object.keys(A.picks[p]||{}).length);
+  const order=DB.players.slice().sort((a,b)=>t[b].total-t[a].total||a.localeCompare(b));
+
+  let h=`<div class="card"><h2>Fase 2 · Playoffs + Prêmios</h2>
+    <p class="sub">${nd?`${nd} de ${AWARDS.length} prêmios definidos`:'Pontuação acende quando a NFL anunciar os prêmios'} · playoffs entram quando a aba for liberada</p>
+    <div class="standings">`;
+  order.forEach((p,i)=>{
+    const r=t[p];
+    h+=`<div class="stand ${nd&&i<3?'p'+(i+1):''}">
+      <div class="pos">${i+1}</div>
+      <div class="who">${p}${nd&&i===0&&r.total>0?'<span class="crown">Líder</span>':''}</div>
+      <div class="rec">${r.total} pts</div>
+      <div class="pct">prêmios ${r.awards}</div>
+    </div>`;
+  });
+  h+=`</div><p class="sub" style="margin:12px 0 0">MVP, OPOY e DPOY: cravar o 1º vale 5, o 2º vale 3, o 3º vale 1, e nome no top 3 real em outra posição vale 1. Demais prêmios: acerto vale 3.</p></div>`;
+
+  if(A.lockDate){
+    const m=A.lockDate.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    const closed=m?new Date()>new Date(+m[3],+m[2]-1,+m[1],23,59,59):true;
+    h+=`<span class="lockbadge">${closed?'Palpites fechados em':'Palpites abertos até'} ${esc(A.lockDate)}${A.lockDate===AWARDS_DEADLINE?' · fim da Semana 11':''}</span>`;
+  }
+  if(!anyPick){ h+=`<div class="card"><div class="empty">Nenhum palpite de prêmio lançado ainda.<br>Vá em <b>Administrar → Palpites de prêmios</b>.</div></div>`; el.innerHTML=h; return; }
+
+  const card=a=>{
+    const res=asArr(A.results[a.k]);
+    h+=`<div class="awcard"><h4>${a.k}</h4><div class="full">${a.full}${a.top===3?' · top 3':''}</div>`;
+    h+= res[0]
+      ? `<div class="awres">Oficial: ${a.top===3?res.map((n,i)=>n?`${i+1}º ${esc(n)}`:'').filter(Boolean).join(' · '):esc(res[0])}</div>`
+      : `<div class="awres pend">Aguardando anúncio oficial</div>`;
+    h+=`<div class="awtbl"><table class="aw"><tr><th></th>${a.top===3?'<th>1º</th><th>2º</th><th>3º</th>':'<th>Palpite</th>'}<th style="text-align:right">Pts</th></tr>`;
+    DB.players.forEach(p=>{
+      const ev=awardEval(a,(A.picks[p]||{})[a.k],A.results[a.k]);
+      h+=`<tr><td class="pl">${p}</td>`;
+      ev.cells.forEach(c=>{
+        const cls=c.st==='exact'?'hit':c.st==='part'?'part':c.st==='miss'?'miss':'';
+        h+=`<td>${c.name?`<span class="pick ${cls}">${esc(c.name)}</span>`:'<span style="color:var(--slate)">—</span>'}</td>`;
+      });
+      h+=`<td class="pts">${ev.known?ev.pts:''}</td></tr>`;
+    });
+    h+='</table></div></div>';
+  };
+  h+='<div class="awgrid top">'; AWARDS.filter(a=>a.top===3).forEach(card); h+='</div>';
+  h+='<div class="awgrid">'; AWARDS.filter(a=>a.top===1).forEach(card); h+='</div>';
+  el.innerHTML=h;
+}
+
+function renderAwardsAdmin(){
+  const box=$('#awAdmin'); if(!box) return;
+  const A=ensureAwards();
+  if(!ui.awPlayer||!DB.players.includes(ui.awPlayer)) ui.awPlayer=DB.players[0];
+  const mine=A.picks[ui.awPlayer]||{};
+  const field=(pref,a,vals)=>`<label>${a.k}</label><div class="ins">${
+    Array.from({length:a.top},(_,i)=>`<input type="text" list="awNames" data-${pref}="${a.k}|${i}" value="${esc(asArr(vals[a.k])[i]||'')}" placeholder="${a.top===3?(i+1)+'º':'Nome'}">`).join('')}</div>`;
+  box.innerHTML=`<datalist id="awNames">${awardNames().map(n=>`<option value="${esc(n)}">`).join('')}</datalist>
+  <div class="card paper">
+    <h2>Palpites de prêmios</h2>
+    <p class="sub">Um participante por vez. O campo sugere nomes já digitados, e maiúsculas e acentos não importam na hora de comparar.</p>
+    <div class="row"><label for="awWho">Quem mandou</label>
+      <select id="awWho">${DB.players.map(p=>`<option ${p===ui.awPlayer?'selected':''}>${p}${Object.keys(A.picks[p]||{}).length?' ✓':''}</option>`).join('')}</select></div>
+    <div class="awform">${AWARDS.map(a=>field('pk',a,mine)).join('')}</div>
+    <div class="row end"><button class="btn" id="awSave">Salvar palpites de ${ui.awPlayer}</button></div>
+  </div>
+  <div class="card paper">
+    <h2>Resultado oficial dos prêmios</h2>
+    <p class="sub">Preencha quando a NFL anunciar. Para MVP, OPOY e DPOY use a ordem da votação da AP.</p>
+    <div class="awform">${AWARDS.map(a=>field('rs',a,A.results)).join('')}</div>
+    <div class="row"><label for="awLock">Palpites fechados em</label><input type="text" id="awLock" value="${esc(A.lockDate)}" placeholder="ex.: 05/11/2026"></div>
+    <div class="row end" style="margin-top:9px"><button class="btn" id="awResSave">Salvar resultado</button></div>
+  </div>`;
+  const collect=pref=>{
+    const o={};
+    box.querySelectorAll(`[data-${pref}]`).forEach(inp=>{
+      const [k,i]=inp.dataset[pref].split('|'); const v=inp.value.trim();
+      const a=AWARDS.find(x=>x.k===k);
+      if(a.top===1){ if(v) o[k]=v; }
+      else { o[k]=o[k]||['','','']; o[k][+i]=v; }
+    });
+    Object.keys(o).forEach(k=>{ if(Array.isArray(o[k])&&!o[k].some(Boolean)) delete o[k]; });
+    return o;
+  };
+  $('#awWho').onchange=e=>{ ui.awPlayer=e.target.value.replace(' ✓',''); renderAwardsAdmin(); };
+  $('#awSave').onclick=()=>{ A.picks[ui.awPlayer]=collect('pk'); render(); };
+  $('#awResSave').onclick=()=>{ A.results=collect('rs'); A.lockDate=$('#awLock').value.trim(); render(); };
+}
+
+/* ============================================================
    RENDER — RANKING
    ============================================================ */
 function renderRank(){
@@ -3640,7 +3916,7 @@ function renderRank(){
   const list=ranked();
   const maxHit=list[0]?list[0].hit:0;
 
-  let h=`<div class="card"><h2>Classificação geral</h2>
+  let h=`<div class="card"><h2>Fase 1 · Temporada regular</h2>
     <p class="sub">${list[0]?list[0].played:0} jogos decididos${lastPlayed?` · destaque da Semana ${lastPlayed}`:''}</p>
     <div class="standings">`;
   list.forEach((r,i)=>{
@@ -3657,6 +3933,17 @@ function renderRank(){
     </div>`;
   });
   h+='</div></div>';
+
+  /* fase 2 */
+  {
+    const t2=phase2Totals(), nd=awardsDecided();
+    const o2=DB.players.slice().sort((a,b)=>t2[b].total-t2[a].total||a.localeCompare(b));
+    h+=`<div class="card"><h2>Fase 2 · Playoffs + Prêmios</h2>
+      <p class="sub">${nd?`${nd} de ${AWARDS.length} prêmios definidos`:'Começa a pontuar no fim da temporada'} · detalhes na aba Prêmios</p>
+      <div class="standings">`;
+    o2.forEach((p,i)=>{h+=`<div class="stand ${nd&&i<3?'p'+(i+1):''}"><div class="pos">${i+1}</div><div class="who">${p}</div><div class="rec">${t2[p].total} pts</div><div class="pct"></div></div>`;});
+    h+='</div></div>';
+  }
 
   /* pontuação semana a semana */
   h+=`<div class="card"><h3>Semana a semana</h3>
@@ -3987,6 +4274,8 @@ function renderAdmin(){
     </div>
   </div>
 
+  <div id="awAdmin"></div>
+
   <div class="card paper">
     <h2>Backup</h2>
     <p class="sub">Baixe o arquivo depois de cada rodada. Ele guarda tudo: jogos, palpites e resultados.</p>
@@ -4083,7 +4372,7 @@ function renderReview(wk,rows,unmatched,player,w){
    ============================================================ */
 function render(){
   $('#tabPO').disabled=!DB.playoffsUnlocked;
-  renderRank(); renderWeek(); renderStats(); renderPO(); renderAdmin();
+  ensureAwards(); renderRank(); renderWeek(); renderStats(); renderAwards(); renderPO(); renderAdmin(); renderAwardsAdmin();
 }
 function setPanel(p){
   ui.panel=p;
